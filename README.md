@@ -213,3 +213,9 @@ Here's a dump of the test output to show what I mean:
     ✓ when tangents are transverse, circles arranged such that tangent should be flat, first circle clockwise (1 ms)
     ✓ when tangents are transverse, circles arranged such that tangent should be flat, first circle counterCW (1 ms)
 ```
+
+To run the tests yourself
+```
+yarn install
+yarn test
+```
