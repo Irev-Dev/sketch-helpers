@@ -1,0 +1,19 @@
+{
+  "name": "sketch-tests",
+  "version": "1.0.0",
+  "description": "some sketch helpers with tests that I might use one day",
+  "main": "index.ts",
+  "author": "Kurt Hutten",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "@types/jest": "^26.0.23",
+    "@types/node": "^15.6.1",
+    "jest": "^27.0.3",
+    "ts-jest": "^27.0.2",
+    "typescript": "^4.3.2"
+  }
+}
