@@ -1,19 +1,71 @@
 {
-  "name": "sketch-tests",
-  "version": "1.0.0",
-  "description": "some sketch helpers with tests that I might use one day",
-  "main": "index.ts",
-  "author": "Kurt Hutten",
+  "name": "sketch-helpers",
+  "version": "0.0.1",
+  "description": "various 2D sketch helpers",
+  "author": "Kurt Hutten <me@kurthutten.com>",
   "license": "MIT",
+  "type": "module",
   "private": false,
-  "scripts": {
-    "test": "jest"
+  "homepage": "https://github.com/Irev-Dev/sketch-helpers#readme",
+  "bugs": {
+    "url": "https://github.com/Irev-Dev/sketch-helpers/issues"
   },
-  "dependencies": {
-    "@types/jest": "^26.0.23",
-    "@types/node": "^15.6.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Irev-Dev/sketch-helpers.git"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/types/src",
+      "import": "./dist/mjs/index.js",
+      "require": "./dist/cjs/index.js"
+    }
+  },
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/mjs/index.js",
+  "browser": "./dist/umd/index.js",
+  "types": "./dist/types/src",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">= 16.13 <19"
+  },
+  "scripts": {
+    "fmt": "prettier --write './src/**/*.{ts,tsx,js}'",
+    "test": "jest",
+    "test:cov": "jest --coverage",
+    "build:js": "rollup -c",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build": "rimraf dist && npm run build:types && npm run build:js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-typescript": "^7.21.0",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@types/jest": "^29.4.0",
+    "@types/node": "^18.15.0",
+    "esbuild": "^0.17.11",
     "jest": "^27.0.3",
-    "ts-jest": "^27.0.2",
-    "typescript": "^4.3.2"
+    "prettier": "^2.8.4",
+    "rollup": "^3.19.1",
+    "rollup-plugin-dts": "^5.2.0",
+    "rollup-plugin-esbuild": "^5.0.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "ts-jest": "^29.0.5",
+    "typescript": "^4.9.5"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true
   }
 }

@@ -3,8 +3,8 @@ function normalizeRad(angle: number): number {
   return draft < Math.PI * 2 ? draft + Math.PI * 2 : draft
 }
 /** Gives the ▲-angle between from and to angles (shortest path), use radians.
- * 
- * Sign of the returned angle denotes direction, positive means counterClockwise 🔄 
+ *
+ * Sign of the returned angle denotes direction, positive means counterClockwise 🔄
  * @example```deltaAngle({fromAngle: Math.PI/8, toAngle: Math.PI/4})```
  * gives ```Math.PI/8```
  */
@@ -25,8 +25,7 @@ function deltaAngle({
   return 0
 }
 
-
-/** 
+/**
  * @example ```distanceBetweenPoints([0,0], [0,5])```
  * gives `5`
  * @example ```distanceBetweenPoints([0,0], [3,4])```
@@ -45,11 +44,21 @@ export interface Coordinate {
 
 type ArcType = 'shortest' | 'longest' | 'clockwise' | 'counterCW'
 
-function isClockwise({fromAngle, toAngle, arcType, obtuse}: {fromAngle: number, toAngle: number, arcType: ArcType, obtuse: boolean}) {
+function isClockwise({
+  fromAngle,
+  toAngle,
+  arcType,
+  obtuse,
+}: {
+  fromAngle: number
+  toAngle: number
+  arcType: ArcType
+  obtuse: boolean
+}) {
   if (['clockwise', 'counterCW'].includes(arcType)) {
     return arcType === 'clockwise'
   }
-  const isDeltaPositive = deltaAngle({ fromAngle,  toAngle}) > 0
+  const isDeltaPositive = deltaAngle({ fromAngle, toAngle }) > 0
   if (isDeltaPositive) {
     // if the angle delta is positive and the arcType is 'longest' than the clockwise will give the obtuse tangent (and CCW the acute)
     return arcType === 'longest' ? obtuse : !obtuse
@@ -75,7 +84,12 @@ export function calculate3PointsForTangentialArc(
     arcStartPoint.y - previousPoint.y,
     arcStartPoint.x - previousPoint.x
   )
-  const clockwise = isClockwise({fromAngle: angleOfPreviousLineRad, toAngle: ang, obtuse, arcType})
+  const clockwise = isClockwise({
+    fromAngle: angleOfPreviousLineRad,
+    toAngle: ang,
+    obtuse,
+    arcType,
+  })
 
   const onRightHandSide = clockwise === obtuse
   const angleToCircleCenter = onRightHandSide
