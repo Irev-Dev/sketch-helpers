@@ -39,21 +39,17 @@ describe('testing calculate3Points', () => {
       .                                             ,
       .                                             , - endpoint
     `, () => {
-      const {
-        circleCenter,
-        startPoint,
-        onArc,
-        endPoint,
-      } = calculate3PointsForTangentialArc(
-        radius,
-        targetAngle,
-        arcStartPoint,
-        previousPoint,
-        {
-          obtuse: true,
-          arcType: 'clockwise',
-        }
-      )
+      const { circleCenter, startPoint, onArc, endPoint } =
+        calculate3PointsForTangentialArc(
+          radius,
+          targetAngle,
+          arcStartPoint,
+          previousPoint,
+          {
+            obtuse: true,
+            arcType: 'clockwise',
+          }
+        )
       const points = [startPoint, onArc, endPoint]
       expect(circleCenter).toEqual({ x: 5, y: -3 })
       expect(roundPoints(points)).toEqual([
@@ -75,21 +71,17 @@ describe('testing calculate3Points', () => {
     .                     ,
     .______________________ ' - , _ _  startPoint
     `, () => {
-      const {
-        circleCenter,
-        startPoint,
-        onArc,
-        endPoint,
-      } = calculate3PointsForTangentialArc(
-        radius,
-        targetAngle,
-        arcStartPoint,
-        previousPoint,
-        {
-          obtuse: false,
-          arcType: 'clockwise',
-        }
-      )
+      const { circleCenter, startPoint, onArc, endPoint } =
+        calculate3PointsForTangentialArc(
+          radius,
+          targetAngle,
+          arcStartPoint,
+          previousPoint,
+          {
+            obtuse: false,
+            arcType: 'clockwise',
+          }
+        )
       const points = [startPoint, onArc, endPoint]
       expect(circleCenter).toEqual({ x: 5, y: 3 })
       expect(roundPoints(points)).toEqual([
@@ -111,21 +103,17 @@ describe('testing calculate3Points', () => {
     .                                        , '
     ._____________________________ _ _ _ , startPoint
     `, () => {
-      const {
-        circleCenter,
-        startPoint,
-        onArc,
-        endPoint,
-      } = calculate3PointsForTangentialArc(
-        radius,
-        targetAngle,
-        arcStartPoint,
-        previousPoint,
-        {
-          obtuse: true,
-          arcType: 'counterCW',
-        }
-      )
+      const { circleCenter, startPoint, onArc, endPoint } =
+        calculate3PointsForTangentialArc(
+          radius,
+          targetAngle,
+          arcStartPoint,
+          previousPoint,
+          {
+            obtuse: true,
+            arcType: 'counterCW',
+          }
+        )
       const points = [startPoint, onArc, endPoint]
       expect(circleCenter).toEqual({ x: 5, y: 3 })
       expect(roundPoints(points)).toEqual([
@@ -142,21 +130,17 @@ describe('testing calculate3Points', () => {
     .                 ,
     .                 , endPoint
     `, () => {
-      const {
-        circleCenter,
-        startPoint,
-        onArc,
-        endPoint,
-      } = calculate3PointsForTangentialArc(
-        radius,
-        targetAngle,
-        arcStartPoint,
-        previousPoint,
-        {
-          obtuse: false,
-          arcType: 'counterCW',
-        }
-      )
+      const { circleCenter, startPoint, onArc, endPoint } =
+        calculate3PointsForTangentialArc(
+          radius,
+          targetAngle,
+          arcStartPoint,
+          previousPoint,
+          {
+            obtuse: false,
+            arcType: 'counterCW',
+          }
+        )
       const points = [startPoint, onArc, endPoint]
       expect(circleCenter).toEqual({ x: 5, y: -3 })
       expect(roundPoints(points)).toEqual([
@@ -174,21 +158,17 @@ describe('testing calculate3Points', () => {
     .                                             ,
     .                                             , - endpoint
     `, () => {
-      const {
-        circleCenter,
-        startPoint,
-        onArc,
-        endPoint,
-      } = calculate3PointsForTangentialArc(
-        radius,
-        targetAngle,
-        arcStartPoint,
-        previousPoint,
-        {
-          obtuse: true,
-          arcType: 'shortest',
-        }
-      )
+      const { circleCenter, startPoint, onArc, endPoint } =
+        calculate3PointsForTangentialArc(
+          radius,
+          targetAngle,
+          arcStartPoint,
+          previousPoint,
+          {
+            obtuse: true,
+            arcType: 'shortest',
+          }
+        )
       const points = [startPoint, onArc, endPoint]
       expect(circleCenter).toEqual({ x: 5, y: -3 })
       expect(roundPoints(points)).toEqual([
@@ -211,21 +191,17 @@ describe('testing calculate3Points', () => {
     .                                        , '
     ._____________________________ _ _ _ , startPoint
     `, () => {
-      const {
-        circleCenter,
-        startPoint,
-        onArc,
-        endPoint,
-      } = calculate3PointsForTangentialArc(
-        radius,
-        targetAngle,
-        arcStartPoint,
-        previousPoint,
-        {
-          obtuse: true,
-          arcType: 'longest',
-        }
-      )
+      const { circleCenter, startPoint, onArc, endPoint } =
+        calculate3PointsForTangentialArc(
+          radius,
+          targetAngle,
+          arcStartPoint,
+          previousPoint,
+          {
+            obtuse: true,
+            arcType: 'longest',
+          }
+        )
       const points = [startPoint, onArc, endPoint]
       expect(circleCenter).toEqual({ x: 5, y: 3 })
       expect(roundPoints(points)).toEqual([
@@ -243,21 +219,17 @@ describe('testing calculate3Points', () => {
     .                 ,
     .                 , endPoint
     `, () => {
-      const {
-        circleCenter,
-        startPoint,
-        onArc,
-        endPoint,
-      } = calculate3PointsForTangentialArc(
-        radius,
-        targetAngle,
-        arcStartPoint,
-        previousPoint,
-        {
-          obtuse: false,
-          arcType: 'shortest',
-        }
-      )
+      const { circleCenter, startPoint, onArc, endPoint } =
+        calculate3PointsForTangentialArc(
+          radius,
+          targetAngle,
+          arcStartPoint,
+          previousPoint,
+          {
+            obtuse: false,
+            arcType: 'shortest',
+          }
+        )
       const points = [startPoint, onArc, endPoint]
       expect(circleCenter).toEqual({ x: 5, y: -3 })
       expect(roundPoints(points)).toEqual([
@@ -280,21 +252,17 @@ describe('testing calculate3Points', () => {
     .                     ,
     .______________________ ' - , _ _  startPoint
     `, () => {
-      const {
-        circleCenter,
-        startPoint,
-        onArc,
-        endPoint,
-      } = calculate3PointsForTangentialArc(
-        radius,
-        targetAngle,
-        arcStartPoint,
-        previousPoint,
-        {
-          obtuse: false,
-          arcType: 'longest',
-        }
-      )
+      const { circleCenter, startPoint, onArc, endPoint } =
+        calculate3PointsForTangentialArc(
+          radius,
+          targetAngle,
+          arcStartPoint,
+          previousPoint,
+          {
+            obtuse: false,
+            arcType: 'longest',
+          }
+        )
       const points = [startPoint, onArc, endPoint]
       expect(circleCenter).toEqual({ x: 5, y: 3 })
       expect(roundPoints(points)).toEqual([
@@ -319,21 +287,17 @@ describe('testing calculate3Points', () => {
       .                    ,                  , ' onArc
       .                      ' - , _ _ _ ,  '
     `, () => {
-      const {
-        circleCenter,
-        startPoint,
-        onArc,
-        endPoint,
-      } = calculate3PointsForTangentialArc(
-        radius,
-        targetAngle,
-        arcStartPoint,
-        previousPoint,
-        {
-          obtuse: true,
-          arcType: 'clockwise',
-        }
-      )
+      const { circleCenter, startPoint, onArc, endPoint } =
+        calculate3PointsForTangentialArc(
+          radius,
+          targetAngle,
+          arcStartPoint,
+          previousPoint,
+          {
+            obtuse: true,
+            arcType: 'clockwise',
+          }
+        )
       const points = [startPoint, onArc, endPoint]
       expect(circleCenter).toEqual({ x: 5, y: -3 })
       expect(roundPoints(points)).toEqual([
@@ -350,21 +314,17 @@ describe('testing calculate3Points', () => {
     .                    ,
     .______________________' - , _ _ startPoint
     `, () => {
-      const {
-        circleCenter,
-        startPoint,
-        onArc,
-        endPoint,
-      } = calculate3PointsForTangentialArc(
-        radius,
-        targetAngle,
-        arcStartPoint,
-        previousPoint,
-        {
-          obtuse: false,
-          arcType: 'clockwise',
-        }
-      )
+      const { circleCenter, startPoint, onArc, endPoint } =
+        calculate3PointsForTangentialArc(
+          radius,
+          targetAngle,
+          arcStartPoint,
+          previousPoint,
+          {
+            obtuse: false,
+            arcType: 'clockwise',
+          }
+        )
       const points = [startPoint, onArc, endPoint]
       expect(circleCenter).toEqual({ x: 5, y: 3 })
       expect(roundPoints(points)).toEqual([
@@ -383,7 +343,7 @@ describe('testing calculate3Points', () => {
     `, () => {
       const {
         circleCenter,
-        startPoint,
+        // startPoint,
         onArc,
         endPoint,
       } = calculate3PointsForTangentialArc(
@@ -418,7 +378,7 @@ describe('testing calculate3Points', () => {
     `, () => {
       const {
         circleCenter,
-        startPoint,
+        // startPoint,
         onArc,
         endPoint,
       } = calculate3PointsForTangentialArc(
@@ -446,7 +406,7 @@ describe('testing calculate3Points', () => {
     `, () => {
       const {
         circleCenter,
-        startPoint,
+        // startPoint,
         onArc,
         endPoint,
       } = calculate3PointsForTangentialArc(
@@ -482,7 +442,7 @@ describe('testing calculate3Points', () => {
     `, () => {
       const {
         circleCenter,
-        startPoint,
+        // startPoint,
         onArc,
         endPoint,
       } = calculate3PointsForTangentialArc(
@@ -510,7 +470,7 @@ describe('testing calculate3Points', () => {
     `, () => {
       const {
         circleCenter,
-        startPoint,
+        // startPoint,
         onArc,
         endPoint,
       } = calculate3PointsForTangentialArc(
@@ -546,7 +506,7 @@ describe('testing calculate3Points', () => {
     `, () => {
       const {
         circleCenter,
-        startPoint,
+        // startPoint,
         onArc,
         endPoint,
       } = calculate3PointsForTangentialArc(
@@ -773,70 +733,54 @@ describe(`testing pointToTangent`, () => {
 
 describe(`testing getTangentialPointOfTwoCircles`, () => {
   it(`when small to big clockwise circles where their tops are horizontal`, () => {
-    const {
-      fromTangent,
-      toTangent,
-      angle,
-      length,
-    } = getTangentialPointOfTwoCircles({
-      fromCenter: [0, 0],
-      fromRadius: 3,
-      toCenter: [20, -3],
-      toRadius: 6,
-    })
+    const { fromTangent, toTangent, angle, length } =
+      getTangentialPointOfTwoCircles({
+        fromCenter: [0, 0],
+        fromRadius: 3,
+        toCenter: [20, -3],
+        toRadius: 6,
+      })
     expect(fromTangent.map(roughRound)).toEqual([-0, 3])
     expect(toTangent.map(roughRound)).toEqual([20, 3])
     expect(angle).toBe(0)
     expect(length).toBe(20)
   })
   it(`when big to small clockwise circles where their tops are horizontal`, () => {
-    const {
-      fromTangent,
-      toTangent,
-      angle,
-      length,
-    } = getTangentialPointOfTwoCircles({
-      fromCenter: [0, -3],
-      fromRadius: 6,
-      toCenter: [20, 0],
-      toRadius: 3,
-    })
+    const { fromTangent, toTangent, angle, length } =
+      getTangentialPointOfTwoCircles({
+        fromCenter: [0, -3],
+        fromRadius: 6,
+        toCenter: [20, 0],
+        toRadius: 3,
+      })
     expect(fromTangent.map(roughRound)).toEqual([0, 3])
     expect(toTangent.map(roughRound)).toEqual([20, 3])
     expect(angle).toBe(0)
     expect(length).toBe(20)
   })
   it(`when swapping the placement of the circles should mean the tangent runs along the bottom, and angle should be 180`, () => {
-    const {
-      fromTangent,
-      toTangent,
-      angle,
-      length,
-    } = getTangentialPointOfTwoCircles({
-      fromCenter: [20, 0],
-      fromRadius: 3,
-      toCenter: [0, 3],
-      toRadius: 6,
-    })
+    const { fromTangent, toTangent, angle, length } =
+      getTangentialPointOfTwoCircles({
+        fromCenter: [20, 0],
+        fromRadius: 3,
+        toCenter: [0, 3],
+        toRadius: 6,
+      })
     expect(fromTangent.map(roughRound)).toEqual([20, -3])
     expect(toTangent.map(roughRound)).toEqual([0, -3])
     expect(angle).toBe(180)
     expect(length).toBe(20)
   })
   it(`when small to big counterCW circles where their bottoms are horizontal`, () => {
-    const {
-      fromTangent,
-      toTangent,
-      angle,
-      length,
-    } = getTangentialPointOfTwoCircles({
-      fromCenter: [0, 0],
-      fromRadius: 3,
-      toCenter: [20, 3],
-      toRadius: 6,
-      toClockwise: false,
-      fromClockwise: false,
-    })
+    const { fromTangent, toTangent, angle, length } =
+      getTangentialPointOfTwoCircles({
+        fromCenter: [0, 0],
+        fromRadius: 3,
+        toCenter: [20, 3],
+        toRadius: 6,
+        toClockwise: false,
+        fromClockwise: false,
+      })
     expect(fromTangent.map(roughRound)).toEqual([-0, -3])
     expect(toTangent.map(roughRound)).toEqual([20, -3])
     expect(angle).toBe(0)
@@ -844,17 +788,13 @@ describe(`testing getTangentialPointOfTwoCircles`, () => {
   })
   it(`when circles of the same radius at 45deg angle`, () => {
     const makeTestEasyRadius = 1 / Math.sin(Math.PI / 4)
-    const {
-      fromTangent,
-      toTangent,
-      angle,
-      length,
-    } = getTangentialPointOfTwoCircles({
-      fromCenter: [0, 0],
-      fromRadius: makeTestEasyRadius,
-      toCenter: [5, 5],
-      toRadius: makeTestEasyRadius,
-    })
+    const { fromTangent, toTangent, angle, length } =
+      getTangentialPointOfTwoCircles({
+        fromCenter: [0, 0],
+        fromRadius: makeTestEasyRadius,
+        toCenter: [5, 5],
+        toRadius: makeTestEasyRadius,
+      })
     expect(fromTangent.map(roughRound)).toEqual([-1, 1])
     expect(toTangent.map(roughRound)).toEqual([4, 6])
     expect(angle).toBe(45)
@@ -862,38 +802,30 @@ describe(`testing getTangentialPointOfTwoCircles`, () => {
   })
 
   it(`when tangents are transverse, circles arranged such that tangent should be flat, first circle clockwise`, () => {
-    const {
-      fromTangent,
-      toTangent,
-      angle,
-      length,
-    } = getTangentialPointOfTwoCircles({
-      fromCenter: [0, 3],
-      fromRadius: 3,
-      toClockwise: false,
-      toCenter: [20, -6],
-      toRadius: 6,
-      fromClockwise: true,
-    })
+    const { fromTangent, toTangent, angle, length } =
+      getTangentialPointOfTwoCircles({
+        fromCenter: [0, 3],
+        fromRadius: 3,
+        toClockwise: false,
+        toCenter: [20, -6],
+        toRadius: 6,
+        fromClockwise: true,
+      })
     expect(fromTangent.map(roughRound)).toEqual([0, 0])
     expect(toTangent.map(roughRound)).toEqual([20, 0])
     expect(angle).toBe(0)
     expect(length).toBe(20)
   })
   it(`when tangents are transverse, circles arranged such that tangent should be flat, first circle counterCW`, () => {
-    const {
-      fromTangent,
-      toTangent,
-      angle,
-      length,
-    } = getTangentialPointOfTwoCircles({
-      fromCenter: [0, -3],
-      fromRadius: 3,
-      toClockwise: true,
-      toCenter: [20, 6],
-      toRadius: 6,
-      fromClockwise: false,
-    })
+    const { fromTangent, toTangent, angle, length } =
+      getTangentialPointOfTwoCircles({
+        fromCenter: [0, -3],
+        fromRadius: 3,
+        toClockwise: true,
+        toCenter: [20, 6],
+        toRadius: 6,
+        fromClockwise: false,
+      })
     expect(fromTangent.map(roughRound)).toEqual([0, 0])
     expect(toTangent.map(roughRound)).toEqual([20, 0])
     expect(angle).toBe(0)
