@@ -6,6 +6,7 @@ import {
   intersectionWithParallelLine,
   getTangentFromPoint,
   getTangentialPointOfTwoCircles,
+  perpendicularDistance,
 } from './index'
 
 const round2decimal = (value: number): number => Math.round(value * 100) / 100
@@ -830,5 +831,42 @@ describe(`testing getTangentialPointOfTwoCircles`, () => {
     expect(toTangent.map(roughRound)).toEqual([20, 0])
     expect(angle).toBe(0)
     expect(length).toBe(20)
+  })
+})
+
+describe('testing perpendicularDistance', () => {
+  it('vertical line', () => {
+    const expectedDis = Math.random() * 3
+    const dis = perpendicularDistance([0, 0], [0, 1], [expectedDis, 0.5])
+    expect(dis).toBe(-expectedDis)
+  })
+  it('has sign', () => {
+    const expectedDis = Math.random() * 3
+    const dis = perpendicularDistance([0, 0], [0, 1], [expectedDis, 0.5])
+    const dis2 = perpendicularDistance([0, 0], [0, 1], [-expectedDis, 0.5])
+    expect(dis).toBe(-expectedDis)
+    expect(dis2).toBe(expectedDis)
+  })
+  it('horizontal line', () => {
+    const expectedDis = Math.random() * 3
+    const dis = perpendicularDistance([0, 0], [1, 0], [0.5, expectedDis])
+    expect(dis).toBe(expectedDis)
+  })
+  it('random angle line', () => {
+    const deg = ((Math.random() * 10 + 70) / 180) * Math.PI // 10-80deg
+    const hypot = 3
+    const dis = perpendicularDistance(
+      [0, 0],
+      [Math.cos(deg) * 10, Math.sin(deg) * 10],
+      [0, hypot]
+    )
+    const expectedPerpDis = Math.sin(Math.PI / 2 - deg) * hypot
+    expect(dis).toBeCloseTo(expectedPerpDis)
+  })
+  it('when point is on the line, distance should be 0', () => {
+    const dis = perpendicularDistance([0, 0], [1, 0], [0, 0])
+    const dis2 = perpendicularDistance([0, 0], [2, 2], [1, 1])
+    expect(dis).toBe(0)
+    expect(dis2).toBe(0)
   })
 })
