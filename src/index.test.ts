@@ -837,13 +837,13 @@ describe(`testing getTangentialPointOfTwoCircles`, () => {
 describe('testing perpendicularDistance', () => {
   it('vertical line', () => {
     const expectedDis = Math.random() * 3
-    const dis = perpendicularDistance([0, 0], [0,1], [expectedDis, 0.5])
+    const dis = perpendicularDistance([0, 0], [0, 1], [expectedDis, 0.5])
     expect(dis).toBe(-expectedDis)
   })
   it('has sign', () => {
     const expectedDis = Math.random() * 3
-    const dis = perpendicularDistance([0, 0], [0,1], [expectedDis, 0.5])
-    const dis2 = perpendicularDistance([0, 0], [0,1], [-expectedDis, 0.5])
+    const dis = perpendicularDistance([0, 0], [0, 1], [expectedDis, 0.5])
+    const dis2 = perpendicularDistance([0, 0], [0, 1], [-expectedDis, 0.5])
     expect(dis).toBe(-expectedDis)
     expect(dis2).toBe(expectedDis)
   })
@@ -853,16 +853,17 @@ describe('testing perpendicularDistance', () => {
     expect(dis).toBe(expectedDis)
   })
   it('random angle line', () => {
-    const deg = (Math.random()*10 + 70)/180*Math.PI // 10-80deg
+    const deg = ((Math.random() * 10 + 70) / 180) * Math.PI // 10-80deg
     const hypot = 3
-    const dis = perpendicularDistance([0, 0], [
-      Math.cos(deg)*10,
-      Math.sin(deg)*10
-    ], [0, hypot])
-    const expectedPerpDis = Math.sin(Math.PI/2 - deg) * hypot
+    const dis = perpendicularDistance(
+      [0, 0],
+      [Math.cos(deg) * 10, Math.sin(deg) * 10],
+      [0, hypot]
+    )
+    const expectedPerpDis = Math.sin(Math.PI / 2 - deg) * hypot
     expect(dis).toBeCloseTo(expectedPerpDis)
   })
-  it("when point is on the line, distance should be 0", () => {
+  it('when point is on the line, distance should be 0', () => {
     const dis = perpendicularDistance([0, 0], [1, 0], [0, 0])
     const dis2 = perpendicularDistance([0, 0], [2, 2], [1, 1])
     expect(dis).toBe(0)
