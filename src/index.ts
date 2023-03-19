@@ -325,3 +325,15 @@ export function getTangentialPointOfTwoCircles({
     angle: AngleOfTangentLine,
   }
 }
+
+export function perpendicularDistance(linePoint1: [number, number], linePoint2: [number, number], pointToGetPerDistance: [number, number]): number {
+  const [x1, y1] = linePoint1
+  const [x2, y2] = linePoint2
+  const [x0, y0] = pointToGetPerDistance
+
+  const numerator = Math.abs((y2 - y1) * x0 - (x2 - x1) * y0 + x2 * y1 - y2 * x1)
+  const denominator = Math.sqrt(Math.pow(y2 - y1, 2) + Math.pow(x2 - x1, 2))
+  const absDistance = numerator / denominator
+  const sign = Math.sign((x2 - x1) * (y0 - y1) - (y2 - y1) * (x0 - x1))
+  return absDistance * sign
+}
