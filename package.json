@@ -29,7 +29,7 @@
     "dist"
   ],
   "engines": {
-    "node": ">= 16.13 <19"
+    "node": ">= 14 <19"
   },
   "scripts": {
     "fmt": "prettier --write './src/**/*.{ts,tsx,js}'",
